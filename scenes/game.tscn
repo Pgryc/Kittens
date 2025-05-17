@@ -25,28 +25,28 @@ distance = -15.9943
 position = Vector2(0, -8)
 zoom = Vector2(4, 4)
 
-[node name="RightBorder" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="TopBorder" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-2, -28)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(2, -50)
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
 
-[node name="BottomBorder" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(-2, -28)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(2, -50)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
-[node name="LefBorder" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-99, 7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LefBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-29, -7)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
