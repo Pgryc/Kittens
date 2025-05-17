@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var player: CharacterBody2D = $"."
 @onready var bounds: Bounds = %Bounds
 
 const SPEED = 150.0
