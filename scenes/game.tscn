@@ -1,52 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcsn35volqy2t"]
+[gd_scene load_steps=3 format=3 uid="uid://bcsn35volqy2t"]
 
 [ext_resource type="PackedScene" uid="uid://bepkiyp0etcfr" path="res://scenes/player.tscn" id="1_uwrxv"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
-normal = Vector2(-1, 0)
-distance = -144.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
-normal = Vector2(0, 1)
-distance = -10.6716
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
-distance = -150.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
-normal = Vector2(1, 0)
-distance = -15.9943
+[ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scenes/bounds.gd" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -8)
 zoom = Vector2(4, 4)
 
-[node name="RightBorder" type="StaticBody2D" parent="."]
+[node name="Bounds" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_yqjtg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
-shape = SubResource("WorldBoundaryShape2D_uwrxv")
+[node name="UpperLeft" type="Marker2D" parent="Bounds"]
+unique_name_in_owner = true
+position = Vector2(-144, -80)
 
-[node name="TopBorder" type="StaticBody2D" parent="."]
-position = Vector2(-2, -28)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBorder"]
-position = Vector2(2, -50)
-shape = SubResource("WorldBoundaryShape2D_yqjtg")
-
-[node name="BottomBorder" type="StaticBody2D" parent="."]
-position = Vector2(-2, -28)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBorder"]
-position = Vector2(2, -50)
-shape = SubResource("WorldBoundaryShape2D_lnu2h")
-
-[node name="LefBorder" type="StaticBody2D" parent="."]
-position = Vector2(-99, 7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LefBorder"]
-position = Vector2(-29, -7)
-shape = SubResource("WorldBoundaryShape2D_lbhrr")
+[node name="LowerRight" type="Marker2D" parent="Bounds"]
+unique_name_in_owner = true
+position = Vector2(144, 80)

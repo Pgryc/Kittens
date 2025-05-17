@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var bounds: Bounds = %Bounds
 
 const SPEED = 150.0
 const DIRECTION = Vector2(0,0)
@@ -29,6 +30,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = next_direction.x * SPEED
 		velocity.y = next_direction.y * SPEED
 
+	frame += 5
+	
+	
+	var new_pos: Vector2 = player.position * next_direction
+	new_pos = bounds.wrap_vector(player.position)
+	player.position = new_pos
 	move_and_slide()
-	frame += 1
-	##position = bounds.wrap_vector(new_pos)
