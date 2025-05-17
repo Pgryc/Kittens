@@ -17,21 +17,21 @@ func _physics_process(delta: float) -> void:
 
 	if DIRECTION.x == 0:
 		if horizontal_input > 0:
-			next_direction = Vector2(1,0)
+			next_direction = Vector2.LEFT
 		if horizontal_input < 0:
-			next_direction = Vector2(-1,0)
+			next_direction = Vector2.RIGHT
 
 	if DIRECTION.y == 0:
 		if vertical_input > 0:
-			next_direction = Vector2(0,1)
+			next_direction = Vector2.DOWN
 		if vertical_input < 0:
-			next_direction = Vector2(0,-1)
+			next_direction = Vector2.UP
 
 	if frame % 10 == 0:
 		velocity.x = next_direction.x * SPEED
 		velocity.y = next_direction.y * SPEED
 
-	frame += 5
+	frame += 1
 	
 	
 	var new_pos: Vector2 = player.position * next_direction
