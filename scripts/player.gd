@@ -17,9 +17,9 @@ func _physics_process(delta: float) -> void:
 
 	if DIRECTION.x == 0:
 		if horizontal_input > 0:
-			next_direction = Vector2.LEFT
-		if horizontal_input < 0:
 			next_direction = Vector2.RIGHT
+		if horizontal_input < 0:
+			next_direction = Vector2.LEFT
 
 	if DIRECTION.y == 0:
 		if vertical_input > 0:
