@@ -1,14 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcsn35volqy2t"]
+[gd_scene load_steps=4 format=3 uid="uid://bcsn35volqy2t"]
 
 [ext_resource type="PackedScene" uid="uid://bepkiyp0etcfr" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://qxcbpv8pc41" path="res://test_background.png" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scenes/bounds.gd" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(0, 16)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="TestBackground" type="Node2D" parent="."]
+
+[node name="Background texture" type="TextureRect" parent="TestBackground"]
+z_index = -1
+offset_left = -144.0
+offset_top = -81.0
+offset_right = 1008.0
+offset_bottom = 567.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_lnu2h")
+stretch_mode = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "",
+"source_uid": -1
+},
+"slice_section": true
+}
 
 [node name="Bounds" type="Node2D" parent="."]
 unique_name_in_owner = true
