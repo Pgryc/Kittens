@@ -6,6 +6,7 @@ extends CharacterBody2D
 const GRID = 16
 
 var next_direction = Vector2(0,0)
+var current_direction = Vector2(0,0) 
 var moving = false
 
 var animation_speed = 4
@@ -24,14 +25,12 @@ func _process(_delta: float):
 	horizontal_input = Input.get_axis("ui_left", "ui_right")
 	vertical_input = Input.get_axis("ui_up", "ui_down")
 
-	if velocity.x == 0:
 	if current_direction.x == 0:
 		if horizontal_input > 0:
 			next_direction = Vector2.RIGHT
 		if horizontal_input < 0:
 			next_direction = Vector2.LEFT
 
-	if velocity.y == 0:
 	if current_direction.y == 0:
 		if vertical_input > 0:
 			next_direction = Vector2.DOWN
@@ -56,5 +55,6 @@ func move():
 		tween.tween_property(self, "position",
 			position + next_direction * GRID, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
 		moving = true
+		current_direction = next_direction
 		await tween.finished
 		moving = false
