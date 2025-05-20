@@ -3,25 +3,21 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"."
 @onready var bounds: Bounds = %Bounds
 
-const SPEED = 64.0
 const GRID = 16
-var next_direction = Vector2(0,0)
 
-var prev_position = Vector2.ZERO
+var next_direction = Vector2(0,0)
 var moving = false
 
+var animation_speed = 4
 var horizontal_input
 var vertical_input 
 
 @onready var ray = $RayCast2D
 
-var animation_speed = 4
 
 func _ready():
 	position.snapped(Vector2.ONE * GRID)
 	position += Vector2.ONE * GRID/2
-
-	prev_position = position
 
 
 func _process(_delta: float):
@@ -29,16 +25,19 @@ func _process(_delta: float):
 	vertical_input = Input.get_axis("ui_up", "ui_down")
 
 	if velocity.x == 0:
+	if current_direction.x == 0:
 		if horizontal_input > 0:
 			next_direction = Vector2.RIGHT
 		if horizontal_input < 0:
 			next_direction = Vector2.LEFT
 
 	if velocity.y == 0:
+	if current_direction.y == 0:
 		if vertical_input > 0:
 			next_direction = Vector2.DOWN
 		if vertical_input < 0:
 			next_direction = Vector2.UP
+
 
 func _physics_process(_delta: float) -> void:
 	var new_pos: Vector2 = player.position * next_direction
