@@ -52,9 +52,9 @@ script = ExtResource("2_yqjtg")
 
 [node name="UpperLeft" type="Marker2D" parent="Bounds"]
 unique_name_in_owner = true
-position = Vector2(-144, -81)
+position = Vector2(-144, -80)
 
 [node name="LowerRight" type="Marker2D" parent="Bounds"]
 unique_name_in_owner = true
-position = Vector2(144, 79)
+position = Vector2(144, 80)
 scale = Vector2(-47175.3, -171.692)

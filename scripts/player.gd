@@ -40,9 +40,7 @@ func _process(delta: float):
 		if vertical_input < 0:
 			next_direction = Vector2.UP
 
-func _physics_process(delta: float) -> void:
-	# FIXME: Grid system implemented bug where crossig world bounds
-	# causes Momma Cat to snap out of grid :(
+func _physics_process(_delta: float) -> void:
 	var new_pos: Vector2 = player.position * next_direction
 	new_pos = bounds.wrap_vector(player.position)
 	player.position = new_pos
