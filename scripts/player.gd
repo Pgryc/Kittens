@@ -18,13 +18,13 @@ var vertical_input
 var animation_speed = 4
 
 func _ready():
-	position.x = position.x - int(position.x) % GRID + GRID / 2
-	position.y = position.y - int(position.y) % GRID + GRID / 2
+	position.snapped(Vector2.ONE * GRID)
+	position += Vector2.ONE * GRID/2
 
 	prev_position = position
 
 
-func _process(delta: float):
+func _process(_delta: float):
 	horizontal_input = Input.get_axis("ui_left", "ui_right")
 	vertical_input = Input.get_axis("ui_up", "ui_down")
 
