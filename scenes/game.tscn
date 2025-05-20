@@ -19,9 +19,9 @@ zoom = Vector2(4, 4)
 [node name="Background texture" type="TextureRect" parent="TestBackground"]
 z_index = -1
 offset_left = -144.0
-offset_top = -81.0
+offset_top = -80.0
 offset_right = 1008.0
-offset_bottom = 567.0
+offset_bottom = 560.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_lnu2h")
 stretch_mode = 1

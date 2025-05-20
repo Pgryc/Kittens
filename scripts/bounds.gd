@@ -10,10 +10,11 @@ var y_max: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	x_max = lower_right.position.x
-	x_min = upper_left.position.x
-	y_max = lower_right.position.y
-	y_min = upper_left.position.y
+	# bounds are extended 
+	x_max = lower_right.position.x + 8
+	x_min = upper_left.position.x - 8
+	y_max = lower_right.position.y + 8
+	y_min = upper_left.position.y - 8
 
 
 func wrap_vector(v: Vector2) -> Vector2:
