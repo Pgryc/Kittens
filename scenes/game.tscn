@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bepkiyp0etcfr" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qxcbpv8pc41" path="res://test_background.png" id="2_lnu2h"]
-[ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scenes/bounds.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scripts/bounds.gd" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
@@ -52,8 +52,9 @@ script = ExtResource("2_yqjtg")
 
 [node name="UpperLeft" type="Marker2D" parent="Bounds"]
 unique_name_in_owner = true
-position = Vector2(-144, -80)
+position = Vector2(-144, -81)
 
 [node name="LowerRight" type="Marker2D" parent="Bounds"]
 unique_name_in_owner = true
-position = Vector2(144, 80)
+position = Vector2(144, 79)
+scale = Vector2(-47175.3, -171.692)
