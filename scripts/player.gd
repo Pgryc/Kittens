@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var player: CharacterBody2D = $"."
 @onready var bounds: Bounds = %Bounds
-
 const GRID = 16
 
 var next_direction = Vector2(0,0)
