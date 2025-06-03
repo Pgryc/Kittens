@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcsn35volqy2t"]
+[gd_scene load_steps=5 format=3 uid="uid://bcsn35volqy2t"]
 
 [ext_resource type="PackedScene" uid="uid://bepkiyp0etcfr" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://8gjkjn01jbsr" path="res://scenes/kitten.tscn" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://qxcbpv8pc41" path="res://test_background.png" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scripts/bounds.gd" id="2_yqjtg"]
 
@@ -8,8 +9,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 
-[node name="RayCast2D" type="RayCast2D" parent="Player"]
-target_position = Vector2(0, 16)
+[node name="Kitten" parent="." instance=ExtResource("2_lbhrr")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

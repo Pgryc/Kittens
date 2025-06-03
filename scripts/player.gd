@@ -13,7 +13,7 @@ var animation_speed = 4
 var horizontal_input
 var vertical_input 
 
-@onready var ray = $RayCast2D
+var next_kitten = null
 
 
 func _ready():
@@ -46,15 +46,14 @@ func _physics_process(_delta: float) -> void:
 	if not moving:
 		move()
 	
-
+	
 func move():
-	ray.target_position = next_direction * GRID
-	ray.force_raycast_update()
-	if !ray.is_colliding():
-		var tween = create_tween()
-		tween.tween_property(self, "position",
-			position + next_direction * GRID, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
-		moving = true
-		current_direction = next_direction
-		await tween.finished
-		moving = false
+	var tween = create_tween()
+	tween.tween_property(self, "position",
+		position + next_direction * GRID, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
+	moving = true
+	current_direction = next_direction
+	await tween.finished
+	moving = false
+	if next_kitten != null:
+		next_kitten.move_to(position)
