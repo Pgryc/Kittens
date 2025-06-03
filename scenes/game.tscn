@@ -61,6 +61,7 @@ position = Vector2(144, 80)
 scale = Vector2(-47175.3, -171.692)
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 autostart = true
 script = ExtResource("4_lbhrr")
 

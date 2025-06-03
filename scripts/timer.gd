@@ -3,6 +3,7 @@ extends Timer
 var kitten_scene = preload("res://scenes/kitten.tscn")
 @onready var bounds: Bounds = %Bounds
 const player_cat_mother = preload("res://scripts/player.gd")
+@onready var timer: Timer = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,4 +21,5 @@ func add_kitten():
 	kitten_instance.position = Vector2(randi_range(bounds.upper_left.position.x, bounds.lower_right.position.x), randi_range(bounds.lower_right.position.y, bounds.upper_left.position.y))
 	kitten_instance.position += Vector2.ONE * player_cat_mother.GRID/2
 	add_child(kitten_instance)
-	wait_time = randi_range(0,1)
+	wait_time = randi_range(3,4)
+	timer.start()
