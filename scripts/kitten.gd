@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var animation_speed = 4
 @onready var bounds: Bounds = %Bounds
 
 var next_kitten = null
@@ -20,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 func move_to(next_position):
 	var tween = create_tween()
 	tween.tween_property(self, "position",
-		next_position, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
+		next_position, 1.0/previous_kitten.animation_speed).set_trans(Tween.TRANS_LINEAR)
 	
 	if next_kitten != null:
 		next_kitten.move_to(position)
