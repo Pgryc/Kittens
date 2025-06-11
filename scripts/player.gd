@@ -12,12 +12,32 @@ var animation_speed = 4
 var horizontal_input
 var vertical_input 
 
-@onready var ray = $RayCast2D
+var next_kitten = null
 
 
 func _ready():
 	position.snapped(Vector2.ONE * GRID)
 	position += Vector2.ONE * GRID/2
+
+	add_transition_sprites()
+
+func add_transition_sprites():
+	var sprite = get_node("AnimatedSprite2D")
+
+	var top_sprite = sprite.duplicate()
+	var bottom_sprite = sprite.duplicate()
+	var left_sprite = sprite.duplicate()
+	var right_sprite = sprite.duplicate()
+
+	top_sprite.position.y -= 160
+	bottom_sprite.position.y += 160
+	left_sprite.position.x -= 320 - 32
+	right_sprite.position.x += 320 - 32
+
+	self.add_child(top_sprite)
+	self.add_child(bottom_sprite)
+	self.add_child(left_sprite)
+	self.add_child(right_sprite)
 
 
 func _process(_delta: float):
@@ -45,15 +65,14 @@ func _physics_process(_delta: float) -> void:
 	if not moving:
 		move()
 	
-
+	
 func move():
-	ray.target_position = next_direction * GRID
-	ray.force_raycast_update()
-	if !ray.is_colliding():
-		var tween = create_tween()
-		tween.tween_property(self, "position",
-			position + next_direction * GRID, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
-		moving = true
-		current_direction = next_direction
-		await tween.finished
-		moving = false
+	var tween = create_tween()
+	tween.tween_property(self, "position",
+		position + next_direction * GRID, 1.0/animation_speed).set_trans(Tween.TRANS_LINEAR)
+	moving = true
+	current_direction = next_direction
+	await tween.finished
+	moving = false
+	if next_kitten != null:
+		next_kitten.move_to(position)
