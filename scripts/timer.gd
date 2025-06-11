@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _on_timeout() -> void:
+	print("hi")
 	add_kitten()
 	
 func add_kitten():

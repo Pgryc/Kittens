@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcsn35volqy2t"]
+[gd_scene load_steps=6 format=3 uid="uid://bcsn35volqy2t"]
 
 [ext_resource type="PackedScene" uid="uid://bepkiyp0etcfr" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://8gjkjn01jbsr" path="res://scenes/kitten.tscn" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://qxcbpv8pc41" path="res://test_background.png" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://c5f83j8gj5vct" path="res://scripts/bounds.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://c2eps3a6jh2da" path="res://scripts/timer.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node2D"]
 
@@ -58,3 +59,9 @@ position = Vector2(-144, -80)
 unique_name_in_owner = true
 position = Vector2(144, 80)
 scale = Vector2(-47175.3, -171.692)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("4_lbhrr")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
