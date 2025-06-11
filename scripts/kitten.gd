@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@onready var bounds: Bounds = %Bounds
-
+@onready var bounds: Bounds = get_node("/root/Game/Bounds")
 var next_kitten = null
 var previous_kitten = null
 var kitten_scene = preload("res://scenes/kitten.tscn")

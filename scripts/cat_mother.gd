@@ -12,12 +12,11 @@ var horizontal_input
 var vertical_input 
 
 
-
 func _ready():
 	position = position.snapped(Vector2.ONE * GRID)
 	position += Vector2.ONE * GRID/2
-
 	add_transition_sprites()
+
 
 func _process(_delta: float):
 	horizontal_input = Input.get_axis("ui_left", "ui_right")
@@ -52,3 +51,16 @@ func move():
 	moving = false
 	if next_kitten != null:
 		next_kitten.move_to(position)
+
+
+func add_kitten():
+	var kitten_scene = preload("res://scenes/kitten.tscn")
+	var old_kitten = next_kitten
+	var new_kitten = kitten_scene.instantiate()
+
+	new_kitten.position = position + current_direction * GRID
+	get_node("/root/Game/").add_child(new_kitten)
+
+	new_kitten.previous_kitten = self
+	new_kitten.next_kitten = old_kitten
+	next_kitten = new_kitten
