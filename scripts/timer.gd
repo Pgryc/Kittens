@@ -18,8 +18,8 @@ func add_kitten():
 	randomize()
 	var kitten_instance = kitten_scene.instantiate()
 
-	kitten_instance.position.snapped(Vector2.ONE * player_cat_mother.GRID)
 	kitten_instance.position = Vector2(randi_range(bounds.upper_left.position.x, bounds.lower_right.position.x), randi_range(bounds.lower_right.position.y, bounds.upper_left.position.y))
+	kitten_instance.position = kitten_instance.position.snapped(Vector2.ONE * player_cat_mother.GRID)
 	kitten_instance.position += Vector2.ONE * player_cat_mother.GRID/2
 	add_child(kitten_instance)
 	wait_time = randi_range(3,4)
