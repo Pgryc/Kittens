@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp1wtma8ia7mu"]
 
-[ext_resource type="Script" uid="uid://ccdstvg24i56o" path="res://scripts/new_kitten.gd" id="1_12bd0"]
-[ext_resource type="Texture2D" uid="uid://ccp1mtgee65yr" path="res://assets/kitten_sprite_sheet.png" id="1_hpm1y"]
+[ext_resource type="Script" uid="uid://ccdstvg24i56o" path="res://scripts/spawned_kitten.gd" id="1_iekfr"]
+[ext_resource type="Texture2D" uid="uid://ccp1mtgee65yr" path="res://assets/spawned_kitten_sprite_sheet.png" id="2_db74d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mo8n"]
-atlas = ExtResource("1_hpm1y")
+atlas = ExtResource("2_db74d")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wf2c3"]
-atlas = ExtResource("1_hpm1y")
+atlas = ExtResource("2_db74d")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p4fxb"]
@@ -28,8 +28,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpm1y"]
 radius = 3.0
 
-[node name="NewKitten" type="Area2D"]
-script = ExtResource("1_12bd0")
+[node name="SpawnedKitten" type="Area2D"]
+script = ExtResource("1_iekfr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.671875, 0.671875)

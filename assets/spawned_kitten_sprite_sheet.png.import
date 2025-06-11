@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccp1mtgee65yr"
-path="res://.godot/imported/kitten_sprite_sheet.png-f1d043e5207521ff28b0281b336ec2eb.ctex"
+path="res://.godot/imported/spawned_kitten_sprite_sheet.png-213beb0ef6bb2f9abaf0335fbf0b8abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kitten_sprite_sheet.png"
-dest_files=["res://.godot/imported/kitten_sprite_sheet.png-f1d043e5207521ff28b0281b336ec2eb.ctex"]
+source_file="res://assets/spawned_kitten_sprite_sheet.png"
+dest_files=["res://.godot/imported/spawned_kitten_sprite_sheet.png-213beb0ef6bb2f9abaf0335fbf0b8abd.ctex"]
 
 [params]
 

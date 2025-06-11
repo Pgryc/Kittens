@@ -5,7 +5,7 @@ extends CharacterBody2D
 var next_kitten = null
 var previous_kitten = null
 var kitten_scene = preload("res://scenes/kitten.tscn")
-const player_cat_mother = preload("res://scripts/player.gd")
+const player_cat_mother = preload("res://scripts/cat_mother.gd")
 
 func _ready(): 
 	previous_kitten = get_node("/root/Game/Player")
@@ -45,14 +45,3 @@ func move_to(next_position):
 	
 	if next_kitten != null:
 		next_kitten.move_to(position)
-
-
-#func add_kitten():
-	#randomize()
-	#var kitten_instance = kitten_scene.instantiate()
-	#kitten_instance.position.snapped(Vector2.ONE * player_cat_mother.GRID)
-	#kitten_instance.position = Vector2(randi_range(bounds.upper_left.position.x, bounds.lower_right.position.x), randi_range(bounds.lower_right.position.y, bounds.upper_left.position.y))
-	#kitten_instance.position += Vector2.ONE * player_cat_mother.GRID/2
-	#add_child(kitten_instance)
-	#wait_time = randi_range(3,4)
-	#timer.start()

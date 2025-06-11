@@ -1,8 +1,8 @@
 extends Timer
 
-var kitten_scene = preload("res://scenes/new_kitten.tscn")
+var kitten_scene = preload("res://scenes/spawned_kitten.tscn")
 @onready var bounds: Bounds = %Bounds
-const player_cat_mother = preload("res://scripts/player.gd")
+const player_cat_mother = preload("res://scripts/cat_mother.gd")
 @onready var timer: Timer = $"."
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,6 @@ func _ready() -> void:
 
 
 func _on_timeout() -> void:
-	print("hi")
 	add_kitten()
 	
 func add_kitten():
